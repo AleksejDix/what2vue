@@ -1,0 +1,8 @@
+html {
+  @apply overflow-y-scroll bg-gray-100;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
