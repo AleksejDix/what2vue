@@ -70,6 +70,7 @@
 <script>
 import api from '@/api'
 import Badge from '@/components/Badge.vue'
+import debounce from 'lodash/debounce'
 
 export default {
   components: {
@@ -106,8 +107,11 @@ export default {
       }
     },
   },
+  beforeMount() {
+    this.search = debounce(this.callSearchApi.bind(this), 1000)
+  },
   methods: {
-    async search(query) {
+    async callSearchApi(query) {
       const response = await api.searchMulti.index({ query })
       this.results = response.results
       return response
