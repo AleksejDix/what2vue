@@ -4,7 +4,7 @@
       class="no-underline"
       :to="{ name: 'person', params: { id: person.id } }"
     >
-      <div class="relative bg-gray-200 w-full py-150">
+      <div class="relative bg-gray-200 w-full aspect-w-2 aspect-h-3">
         <img
           v-if="person.profile_path"
           class="absolute w-full h-full block inset-0"
@@ -29,9 +29,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.py-150 {
-  padding-top: 150%;
-}
-</style>

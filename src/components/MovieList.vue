@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .movies__list {
   grid-template-columns: repeat(auto-fill, minmax(171px, 1fr));
 }

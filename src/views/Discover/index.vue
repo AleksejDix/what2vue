@@ -6,7 +6,7 @@
         <h2 class="uppercase font-bold">{{ $route.name }} • {{ total }}</h2>
       </div>
     </header>
-    <div class="filter">
+    <div class="px-2">
       <form class="flex gap-2" @submit.prevent="submit">
         <label v-if="genres_options.length > 0" class="block">
           <span class="text-gray-700">Genre</span>
@@ -188,9 +188,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.filter {
-  padding: 1rem 0;
-}
-</style>
