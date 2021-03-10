@@ -16,7 +16,7 @@ const destroy = 'DESTROY_FAVORITE'
 const withID = (id) => (x) => x.id === id
 const wihtoutID = (id) => (x) => x.id !== id
 
-export default new Vuex.Store({
+const vuexStore = new Vuex.Store({
   strict: true,
   plugins: [vuexPersist.plugin],
   modules: {
@@ -43,3 +43,5 @@ export default new Vuex.Store({
     [destroy]: ({ commit }, payload) => commit(destroy, payload),
   },
 })
+
+export default vuexStore

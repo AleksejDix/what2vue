@@ -19,12 +19,16 @@ const router = new VueRouter({
     }
   },
 })
-
-router.beforeEach((routeTo, routeFrom, next) => {
-  if (routeFrom.name !== null) {
+router.beforeEach((to, from, next) => {
+  if (from.name !== null) {
     NProgress.start()
   }
-  next()
+
+  if (to.meta.middleware) {
+    return to.meta.middleware({ to, from, next })
+  }
+
+  return next()
 })
 
 router.afterEach(() => {
