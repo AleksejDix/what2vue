@@ -119,17 +119,17 @@ export default {
         this.loadMore(next)
       }
     },
-    async 'query.sort_order'(next, prev) {
+    'query.sort_order'(next, prev) {
       if (next !== prev) {
         this.reset()
       }
     },
-    async 'query.sort_by'(next, prev) {
+    'query.sort_by'(next, prev) {
       if (next !== prev) {
         this.reset(next)
       }
     },
-    async 'query.with_genres'(next, prev) {
+    'query.with_genres'(next, prev) {
       if (next !== prev) {
         this.reset(next)
       }
